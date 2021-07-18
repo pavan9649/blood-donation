@@ -18,28 +18,20 @@ const bloodDonerSchema=new mongoose.Schema({
     bloodgroup :{
         type:String,
         required:true,
-        has_duplicates:true
+        unique:false
     },
     states:{
         type:String,
-        required:true
+        required:true,
+        unique:false
 
     },
     district :{
         type:String,
         required:true,
-        has_duplicates:true
-    },
-    password:{
-        type:String,
-        required:true
-
-    },
-    confirmpassword:{
-        type:String,
-        required:true
+        unique:false
     }
 
 })
-const Register =new mongoose.model("Register",bloodDonerSchema);
+const Register =mongoose.model("Register",bloodDonerSchema);
 module.exports=Register;
