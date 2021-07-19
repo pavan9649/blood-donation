@@ -1,9 +1,12 @@
-
+const dotenv=require('dotenv');
+const mongoose=require('mongoose');
 const express=require("express");
 const path =require("path");
 const hbs =require("hbs");
 const app=express();
+dotenv.config({ path: './config.env'})
 require("./db/conn");
+
 const Register=require("./models/register")
 const port=process.env.PORT || 3000;
 
